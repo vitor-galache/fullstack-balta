@@ -9,7 +9,7 @@ public static class Configuration
     public const int DefaultStatusCode = 200;
 
     
-    public static string BackendUrl { get; set; } = string.Empty;
-    public static string FrontendUrl { get; set; } = string.Empty;
+    public static string BackendUrl { get; set; } = "http://localhost:5070";
+    public static string FrontendUrl { get; set; } = "http://localhost:5101";
     
 }

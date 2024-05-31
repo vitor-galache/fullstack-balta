@@ -11,6 +11,7 @@ public class CategoryHandler(AppDbContext context) : ICategoryHandler
 {
     public async Task<Response<Category?>> CreateAsync(CreateCategoryRequest request)
     {
+        await Task.Delay(2000);
         var category = new Category
         {
             UserId = request.UserId,
@@ -97,7 +98,7 @@ public class CategoryHandler(AppDbContext context) : ICategoryHandler
                 .OrderBy(x => x.Title);
 
             var categories = await query
-                .Skip(request.PageNumber - 1 * request.PageSize)
+                .Skip((request.PageNumber - 1) * request.PageSize)
                 .Take(request.PageSize)
                 .ToListAsync();
 
